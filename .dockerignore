@@ -2,4 +2,7 @@
 .venv/
 .DB_Store
 .env.example
+.git/
+.gitignore
+Dockerfile
 README.md 
