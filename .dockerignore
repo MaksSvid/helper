@@ -1,0 +1,5 @@
+.idea/
+.venv/
+.DB_Store
+.env.example
+README.md 
