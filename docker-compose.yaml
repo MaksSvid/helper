@@ -1,0 +1,23 @@
+sarvices:
+  bot:
+    build:
+      context: .
+    env_file:
+      - .env 
+    depends_on:
+      - .db
+
+
+  db:
+    image: postgres
+    restart: always
+    env_file:
+      - .env 
+    volumes:
+      - my_data:${PGDATA}
+    ports:
+      - ${DB_PORT_HOST}:5432
+
+
+volumes:
+  my_data:
