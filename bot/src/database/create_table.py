@@ -1,4 +1,4 @@
-from bot.src.db.connection import conn
+from bot.src.database.connection import conn
 from psycopg import OperationalError
 
 

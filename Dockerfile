@@ -21,4 +21,4 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-CMD ["python 3", "-m", "bot.main"] 
+CMD ["python3", "-m", "bot.main"] 

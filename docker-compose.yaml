@@ -1,11 +1,11 @@
-sarvices:
+services:
   bot:
     build:
       context: .
     env_file:
       - .env 
     depends_on:
-      - .db
+      - db
 
 
   db:
