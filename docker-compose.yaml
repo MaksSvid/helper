@@ -1,23 +1,43 @@
 services:
-  bot:
-    build:
+  helper_bot:
+    container_name: tgdiscord_bot
+    image: tgdiscord_image
+    build: 
       context: .
     env_file:
-      - .env 
+      - .env
+    enviroment:
+      BOT_TOKEN: "${BOT_TOKEN}"
     depends_on:
-      - db
+      - helper_bot_database
+
+  helper_bot_database:
+      container_name: postgres_database_tgdiscord
+      image: postgres:16
+      volumes:
+       - postgres_data:/data/postgres
+      ports:
+       {5423:5232}
+      enviroment:
+       PGDATA: /data/postgres
+  
+  pgadmin:
 
 
-  db:
-    image: postgres
-    restart: always
-    env_file:
-      - .env 
-    volumes:
-      - my_data:${PGDATA}
-    ports:
-      - ${DB_PORT_HOST}:5432
+
 
 
 volumes:
-  my_data:
+  postgres_data:
+  pgadmin_data:
+
+
+
+
+
+
+    
+
+    
+
+        
